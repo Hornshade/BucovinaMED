@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://bucovina-med.ro
+
+# Sitemaps
+Sitemap: https://bucovina-med.ro/sitemap.xml
