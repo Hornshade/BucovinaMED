@@ -8,7 +8,8 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Bucovina Med - Ambulanță Privată | Servicii Medicale de Urgență 24/7",
+  title: "Bucovina Med - Ambulanță Privată Suceava",
+  applicationName: "Bucovina Med",
   description:
     "Ambulanță privată Bucovina Med - Servicii de transport medical și urgență 24/7 în România. Transport asistat și neasistat, transport între spitale, intervenție rapidă. Echipă medicală profesionistă, apelați +40 771 010 112",
   generator: "v0.app",
@@ -82,8 +83,8 @@ export default function RootLayout({
       {
         "@type": "MedicalOrganization",
         "@id": "https://bucovina-med.ro/#organization",
-        name: "Ambulanța Bucovina Med",
-        alternateName: "Bucovina Med",
+        name: "Bucovina Med",
+        alternateName: "Ambulanța Bucovina Med",
         legalName: "Bucovina Med SRL",
         url: "https://bucovina-med.ro",
         logo: "https://bucovina-med.ro/logo-v1.png",
@@ -169,6 +170,11 @@ export default function RootLayout({
           "Ambulanță privată și servicii medicale de urgență în România",
         publisher: { "@id": "https://bucovina-med.ro/#organization" },
         inLanguage: "ro-RO",
+        potentialAction: {
+    "@type": "SearchAction",
+    target: "https://bucovina-med.ro/?s={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
       },
       {
         "@type": "WebPage",
