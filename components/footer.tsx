@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import { CookieSettingsLink } from "@/components/cookie-consent/cookie-settings-link"
 
 export function Footer() {
   return (
@@ -91,6 +92,19 @@ export function Footer() {
         </div>
 
         <div className="mt-8 border-t border-border pt-8 text-center text-sm text-muted-foreground">
+          <nav aria-label="Legal" className="mb-4 flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
+            <Link href="/politica-confidentialitate" className="hover:text-primary">
+              Politica de confidențialitate
+            </Link>
+            <span aria-hidden="true" className="text-border">|</span>
+            <Link href="/politica-cookies" className="hover:text-primary">
+              Politica de cookies
+            </Link>
+            <span aria-hidden="true" className="text-border">|</span>
+            <CookieSettingsLink className="cursor-pointer hover:text-primary focus-visible:outline-none focus-visible:underline">
+              Setări cookies
+            </CookieSettingsLink>
+          </nav>
           <p>&copy; {new Date().getFullYear()} Ambulanța Bucovina Med. Toate drepturile rezervate.</p>
         </div>
       </div>

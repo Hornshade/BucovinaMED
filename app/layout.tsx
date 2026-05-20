@@ -1,7 +1,9 @@
 import type React from "react";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { Analytics } from "@vercel/analytics/next";
+import { ConsentInitScript } from "@/components/analytics/consent-init-script";
+import { GtmNoscript } from "@/components/analytics/gtm-noscript";
+import { CookieConsent } from "@/components/cookie-consent/cookie-consent";
 import "./globals.css";
 
 const _geist = Geist({ subsets: ["latin"] });
@@ -192,14 +194,16 @@ export default function RootLayout({
   return (
     <html lang="ro">
       <head>
+        <ConsentInitScript />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
       <body className={`font-sans antialiased`}>
+        <GtmNoscript />
         {children}
-        <Analytics />
+        <CookieConsent />
       </body>
     </html>
   );
